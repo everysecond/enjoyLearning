@@ -13,10 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
+Route::post('login',[\App\Http\Controllers\LoginController::class,'login'])->name('登录');
+Route::post('logout',[\App\Http\Controllers\LoginController::class,'logout'])->name('登出');
+
+
+Route::middleware(['jwt.auth'])->group(function () {
+    Route::middleware(['auth', 'verified'])->get('/home', function () {
+        return view('home');
+    })->name('首页');
+
+
+    Route::get('/', function () {
+        return view('home');
+    });
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
