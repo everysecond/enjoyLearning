@@ -13,18 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('login',[\App\Http\Controllers\LoginController::class,'login'])->name('登录');
-Route::post('logout',[\App\Http\Controllers\LoginController::class,'logout'])->name('登出');
+Route::post('login','LoginController@login')->name('登录');
+Route::post('logout','LoginController@logout')->name('登出');
+
 
 
 Route::middleware(['jwt.auth'])->group(function () {
-    Route::middleware(['auth', 'verified'])->get('/home', function () {
+
+    Route::get('/home', function () {
         return view('home');
     })->name('首页');
-
-
-    Route::get('/', function () {
-        return view('home');
-    });
 });
 

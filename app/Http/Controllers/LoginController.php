@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Route;
 
 class LoginController extends Controller
 {
@@ -33,20 +34,17 @@ class LoginController extends Controller
             if (!$token) {
                 return $this->error('登陆失败：账号或密码有误');
             }
-//            event('login.log', [ServiceConstant::RESULT_SUCCESS, $request]);
         } catch (\Exception $e) {
             $message = $e->getMessage();
-//            event('login.log', [ServiceConstant::RESULT_FAIL, $request]);
             Log::info($message);
             throw $e;
         } catch (\Exception $e) {
             $message = $e->getMessage();
-//            event('login.log', [ServiceConstant::RESULT_FAIL, $request]);
             Log::info($message);
             throw new \Exception('登陆失败：账号或密码有误');
         }
 
-        return $this->success(['token' => $token, 'user' => Auth::user()]);
+        return redirect()->route('首页',['token'=>$token,'user'=>$this->user()]);
     }
 
     public function logout()
