@@ -16,11 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::post('login','LoginController@login')->name('登录');
 Route::post('logout','LoginController@logout')->name('登出');
 
+Route::get('login', function () {
+    return view('login');
+})->name('登录页');
 
-
-Route::middleware(['jwt.auth'])->group(function () {
-
-    Route::get('/home', function () {
+Route::middleware(['jwt.check.auth'])->group(function () {
+    Route::get('/', function () {
         return view('home');
     })->name('首页');
 });
