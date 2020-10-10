@@ -64,7 +64,8 @@
                 <li class="nav-header" style=" padding:0 0 5px 0;">
                     <div class="dropdown profile-element" style="background-color: #e2003b;padding: 12px 44px">
                         <a href="http://www.anchnet.com">
-                            <img alt="anchnet.com中国领先的数据中心服务商" src="/img/anchnet_home_logo.svg" style="width: 120px">
+                            {{--<img alt="" src="" style="width: 120px">--}}
+                            <audio id="music" controls muted="muted" autoplay="true" name="media" ><source src="music/我的一个道姑朋友.mp3" type="audio/mpeg" ></audio>
                         </a>
                     </div>
                     <div class="logo-element"><img alt="anchnet.com中国领先的数据中心服务商" src="/img/anchnet-logo-small.svg">

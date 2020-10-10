@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    <title>H+ 后台主题UI框架 - 登录</title>
-    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
-    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+    <title></title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
@@ -61,10 +61,6 @@
                 &copy; 2015 All Rights Reserved. H+
             </div>
         </div>
-        <div id="abc">
-            <button id="aaa"></button>
-            <audio id="music" controls muted="muted" autoplay="true" name="media" ><source src="music/我的一个道姑朋友.mp3" type="audio/mpeg" ></audio>
-        </div>
     </div>
 </div>
 </body>
@@ -115,28 +111,6 @@
     } catch (e) {
         console.log('!Your browser does not support AudioContext');
     }
-
-
-
-
-    $('#aaa').click();
-     $(function () {
-         var abc = document.getElementById('abc');
-         var audioDom = document.createElement('div')
-         audioDom.innerHTML =
-             `<audio id="success_music" style="" muted="true" controls preload="auto"
-					 autoplay="true" src="music/我的一个道姑朋友.mp3"></audio>`;
-         $('#aaa').click(function () {
-             abc.appendChild(audioDom);
-             var audio_success = document.getElementById('success_music');
-             audio_success.volume = 1;
-             // audio_success.play();
-             // document.addEventListener("WeixinJSBridgeReady", function () {
-             //     audio_success.play();
-             // }, false);
-         });
-         $('#aaa').click();
-     });
 </script>
 <script id="sakura_point_vsh" type="x-shader/x_vertex">
 uniform mat4 uProjection;
