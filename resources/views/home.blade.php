@@ -63,12 +63,11 @@
             <ul class="nav" id="side-menu">
                 <li class="nav-header" style=" padding:0 0 5px 0;">
                     <div class="dropdown profile-element" style="background-color: #e2003b;padding: 12px 44px">
-                        <a href="http://www.anchnet.com">
-                            {{--<img alt="" src="" style="width: 120px">--}}
-                            <audio id="music" controls muted="muted" autoplay="true" name="media" ><source src="music/我的一个道姑朋友.mp3" type="audio/mpeg" ></audio>
+                        <a href="/?token={{request('token')}}">
+                            <img alt="" src="/img/profile_small.jpg" style="width: 120px">
                         </a>
                     </div>
-                    <div class="logo-element"><img alt="anchnet.com中国领先的数据中心服务商" src="/img/anchnet-logo-small.svg">
+                    <div class="logo-element"><img alt="" src="/img/user.png">
                     </div>
                 </li>
                 <li class="">
@@ -217,6 +216,7 @@
 </div>
 
 <!-- H+ -->
+<script type="text/javascript" src="/js/bgmusic.js"></script>
 <script type="text/javascript" src="/render/hplus/js/jquery.min.js"></script>
 <script type="text/javascript" src="/render/hplus/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/render/hplus/js/bootstrap-table.min.js"></script>

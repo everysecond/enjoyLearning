@@ -32,7 +32,7 @@
             <div class="col-sm-7">
                 <div class="signin-info">
                     <div class="logopanel m-b">
-                        <h1>[ H+ ]</h1>
+                        <h1>[ ENJOY| ]</h1>
                     </div>
                     <div class="m-b"></div>
                     <h4>欢迎使用 <strong>H+ 后台主题UI框架</strong></h4>
@@ -47,10 +47,10 @@
                 </div>
             </div>
             <div class="col-sm-5">
-                <form method="post" action="index.html">
+                <form method="post" action="/login">
                     <h4 class="no-margins">登录：</h4>
-                    <input type="text" class="form-control uname" placeholder="用户名" />
-                    <input type="password" class="form-control pword m-b" placeholder="密码" />
+                    <input type="text" name="mobile" class="form-control uname" placeholder="手机号" />
+                    <input type="password" name="password" class="form-control pword m-b" placeholder="密码" />
                     <a href="">忘记密码了？</a>
                     <button class="btn btn-success btn-block">登录</button>
                 </form>
@@ -58,60 +58,14 @@
         </div>
         <div class="signup-footer">
             <div class="pull-left">
-                &copy; 2015 All Rights Reserved. H+
+                &copy; 2020 All Rights Reserved. Xiao Sun
             </div>
         </div>
     </div>
 </div>
 </body>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script>
-    window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext || window.msAudioContext;
-    try {
-        var context = new window.AudioContext();
-        var source = null;
-        var audioBuffer = null;
-
-        function stopSound() {
-            if (source) {
-                source.stop(0); //立即停止
-            }
-        }
-
-        function playSound() {
-            source = context.createBufferSource();
-            source.buffer = audioBuffer;
-            source.loop = true; //循环播放
-            source.connect(context.destination);
-            source.start(0); //立即播放
-        }
-
-        function initSound(arrayBuffer) {
-            context.decodeAudioData(arrayBuffer, function(buffer) { //解码成功时的回调函数
-                audioBuffer = buffer;
-                playSound();
-            }, function(e) { //解码出错时的回调函数
-                console.log('Error decoding file', e);
-            });
-        }
-
-        function loadAudioFile(url) {
-            var xhr = new XMLHttpRequest(); //通过XHR下载音频文件
-            xhr.open('GET', url, true);
-            xhr.responseType = 'arraybuffer';
-            xhr.onload = function(e) { //下载完成
-                initSound(this.response);
-            };
-            xhr.send();
-        }
-        loadAudioFile('music/我的一个道姑朋友.mp3');
-        $("#stop").click(function() {
-            stopSound();
-        });
-    } catch (e) {
-        console.log('!Your browser does not support AudioContext');
-    }
-</script>
+{{--<script type="text/javascript" src="js/jquery.min.js"></script>--}}
+<script type="text/javascript" src="js/bgmusic.js"></script>
 <script id="sakura_point_vsh" type="x-shader/x_vertex">
 uniform mat4 uProjection;
 uniform mat4 uModelview;
