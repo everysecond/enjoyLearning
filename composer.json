@@ -25,6 +25,7 @@
         "nwidart/laravel-modules": "^7.0",
         "orangehill/iseed": "^2.6",
         "spatie/laravel-permission": "^3.11",
+        "swooletw/laravel-swoole": "^2.6",
         "tymon/jwt-auth": "^1.0",
         "viest/php-ext-xlswriter-ide-helper": "dev-master"
     },
