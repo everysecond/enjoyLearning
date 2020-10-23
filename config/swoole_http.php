@@ -90,7 +90,7 @@ return [
     |--------------------------------------------------------------------------
     */
     'instances' => [
-        //
+        'auth'
     ],
 
     /*
@@ -100,6 +100,7 @@ return [
     */
     'providers' => [
         Illuminate\Pagination\PaginationServiceProvider::class,
+		Illuminate\Auth\AuthServiceProvider::class,
     ],
 
     /*
